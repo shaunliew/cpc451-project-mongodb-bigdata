@@ -44,4 +44,4 @@ db.getCollection('movie').aggregate([
     }
   },
   { $limit: 10 }
-])
+]).explain("executionStats");

@@ -45,4 +45,4 @@
       }
     },
     { $limit: 10 }
-  ])
+  ]).explain("executionStats");

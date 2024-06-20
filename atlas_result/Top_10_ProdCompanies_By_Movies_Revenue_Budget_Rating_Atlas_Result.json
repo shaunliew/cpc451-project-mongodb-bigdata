@@ -1,0 +1,290 @@
+{
+  "explainVersion": "1",
+  "stages": [
+    {
+      "$cursor": {
+        "queryPlanner": {
+          "namespace": "movies.movie",
+          "indexFilterSet": false,
+          "parsedQuery": {},
+          "queryHash": "D11AAD0B",
+          "planCacheKey": "115525CB",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "budget": 1,
+              "production_companies": 1,
+              "revenue": 1,
+              "vote_average": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 1053633,
+          "executionTimeMillis": 5498,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1053633,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 1053633,
+            "executionTimeMillisEstimate": 1021,
+            "works": 1053634,
+            "advanced": 1053633,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 1144,
+            "restoreState": 1144,
+            "isEOF": 1,
+            "transformBy": {
+              "budget": 1,
+              "production_companies": 1,
+              "revenue": 1,
+              "vote_average": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "nReturned": 1053633,
+              "executionTimeMillisEstimate": 371,
+              "works": 1053634,
+              "advanced": 1053633,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 1144,
+              "restoreState": 1144,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1053633
+            }
+          },
+          "operationMetrics": {
+            "docBytesRead": 848650479,
+            "docUnitsRead": 1053633,
+            "keysSorted": 3802,
+            "cpuNanos": 5498511546
+          }
+        }
+      },
+      "nReturned": 1053633,
+      "executionTimeMillisEstimate": 1951
+    },
+    {
+      "$addFields": {
+        "production_companies": {
+          "$split": [
+            {
+              "$convert": {
+                "input": "$production_companies",
+                "to": {
+                  "$const": "string"
+                }
+              }
+            },
+            {
+              "$const": ", "
+            }
+          ]
+        }
+      },
+      "nReturned": 1053633,
+      "executionTimeMillisEstimate": 3109
+    },
+    {
+      "$unwind": {
+        "path": "$production_companies"
+      },
+      "nReturned": 1278589,
+      "executionTimeMillisEstimate": 3269
+    },
+    {
+      "$group": {
+        "_id": "$production_companies",
+        "total_movies": {
+          "$sum": {
+            "$const": 1
+          }
+        },
+        "average_revenue": {
+          "$avg": "$revenue"
+        },
+        "average_budget": {
+          "$avg": "$budget"
+        },
+        "average_rating": {
+          "$avg": "$vote_average"
+        }
+      },
+      "maxAccumulatorMemoryUsageBytes": {
+        "total_movies": 15007488,
+        "average_revenue": 16258112,
+        "average_budget": 16258112,
+        "average_rating": 16258112
+      },
+      "totalOutputDataSizeBytes": 63515130,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "numBytesSpilledEstimate": 0,
+      "spilledRecords": 0,
+      "nReturned": 156328,
+      "executionTimeMillisEstimate": 5414
+    },
+    {
+      "$match": {
+        "average_revenue": {
+          "$gte": 10000000
+        }
+      },
+      "nReturned": 3802,
+      "executionTimeMillisEstimate": 5486
+    },
+    {
+      "$project": {
+        "_id": true,
+        "total_movies": true,
+        "average_revenue": true,
+        "average_budget": true,
+        "average_rating": true
+      },
+      "nReturned": 3802,
+      "executionTimeMillisEstimate": 5489
+    },
+    {
+      "$sort": {
+        "sortKey": {
+          "total_movies": -1,
+          "average_revenue": -1,
+          "average_budget": -1,
+          "average_rating": -1
+        },
+        "limit": 10
+      },
+      "totalDataSizeSortedBytesEstimate": 5144,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "nReturned": 10,
+      "executionTimeMillisEstimate": 5491
+    }
+  ],
+  "serverInfo": {
+    "host": "ac-w0akn8z-lb.bzu4vh1.mongodb.net",
+    "port": 27017,
+    "version": "7.3.2",
+    "gitVersion": "cb58a79ea634ff332b6b6f3c145571db23a09c95"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted"
+  },
+  "command": {
+    "aggregate": "movie",
+    "pipeline": [
+      {
+        "$addFields": {
+          "production_companies": {
+            "$split": [
+              {
+                "$toString": "$production_companies"
+              },
+              ", "
+            ]
+          }
+        }
+      },
+      {
+        "$unwind": "$production_companies"
+      },
+      {
+        "$group": {
+          "_id": "$production_companies",
+          "total_movies": {
+            "$sum": 1
+          },
+          "average_revenue": {
+            "$avg": "$revenue"
+          },
+          "average_budget": {
+            "$avg": "$budget"
+          },
+          "average_rating": {
+            "$avg": "$vote_average"
+          }
+        }
+      },
+      {
+        "$match": {
+          "average_revenue": {
+            "$gte": 10000000
+          }
+        }
+      },
+      {
+        "$project": {
+          "_id": 1,
+          "total_movies": 1,
+          "average_revenue": 1,
+          "average_budget": 1,
+          "average_rating": 1
+        }
+      },
+      {
+        "$sort": {
+          "total_movies": -1,
+          "average_revenue": -1,
+          "average_budget": -1,
+          "average_rating": -1
+        }
+      },
+      {
+        "$limit": 10
+      }
+    ],
+    "cursor": {},
+    "$db": "movies"
+  },
+  "ok": 1,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1718877411,
+        "i": 74
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "AHuJqIJ8LTY75Xuhgpo9nZWp/YE=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7320991074242003000
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1718877411,
+      "i": 71
+    }
+  }
+}

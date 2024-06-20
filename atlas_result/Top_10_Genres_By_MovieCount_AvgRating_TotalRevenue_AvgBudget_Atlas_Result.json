@@ -1,0 +1,347 @@
+{
+  "explainVersion": "1",
+  "stages": [
+    {
+      "$cursor": {
+        "queryPlanner": {
+          "namespace": "movies.movie",
+          "indexFilterSet": false,
+          "parsedQuery": {},
+          "queryHash": "7B7F698A",
+          "planCacheKey": "F63572B6",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "budget": 1,
+              "genres": 1,
+              "revenue": 1,
+              "vote_average": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 1053633,
+          "executionTimeMillis": 5384,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1053633,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 1053633,
+            "executionTimeMillisEstimate": 928,
+            "works": 1053634,
+            "advanced": 1053633,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 1124,
+            "restoreState": 1124,
+            "isEOF": 1,
+            "transformBy": {
+              "budget": 1,
+              "genres": 1,
+              "revenue": 1,
+              "vote_average": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "nReturned": 1053633,
+              "executionTimeMillisEstimate": 340,
+              "works": 1053634,
+              "advanced": 1053633,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 1124,
+              "restoreState": 1124,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1053633
+            }
+          },
+          "operationMetrics": {
+            "docBytesRead": 848650479,
+            "docUnitsRead": 1053633,
+            "keysSorted": 19,
+            "cpuNanos": 5384221046
+          }
+        }
+      },
+      "nReturned": 1053633,
+      "executionTimeMillisEstimate": 1982
+    },
+    {
+      "$addFields": {
+        "genres": {
+          "$cond": [
+            {
+              "$eq": [
+                {
+                  "$type": [
+                    "$genres"
+                  ]
+                },
+                {
+                  "$const": "string"
+                }
+              ]
+            },
+            {
+              "$split": [
+                "$genres",
+                {
+                  "$const": ", "
+                }
+              ]
+            },
+            {
+              "$const": []
+            }
+          ]
+        }
+      },
+      "nReturned": 1053633,
+      "executionTimeMillisEstimate": 3116
+    },
+    {
+      "$unwind": {
+        "path": "$genres"
+      },
+      "nReturned": 1398366,
+      "executionTimeMillisEstimate": 3385
+    },
+    {
+      "$match": {
+        "genres": {
+          "$not": {
+            "$eq": ""
+          }
+        }
+      },
+      "nReturned": 997042,
+      "executionTimeMillisEstimate": 4348
+    },
+    {
+      "$group": {
+        "_id": "$genres",
+        "number_of_movies": {
+          "$sum": {
+            "$const": 1
+          }
+        },
+        "average_rating": {
+          "$avg": "$vote_average"
+        },
+        "average_revenue": {
+          "$avg": "$revenue"
+        },
+        "average_budget": {
+          "$avg": "$budget"
+        }
+      },
+      "maxAccumulatorMemoryUsageBytes": {
+        "number_of_movies": 1824,
+        "average_rating": 1976,
+        "average_revenue": 1976,
+        "average_budget": 1976
+      },
+      "totalOutputDataSizeBytes": 7126,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "numBytesSpilledEstimate": 0,
+      "spilledRecords": 0,
+      "nReturned": 19,
+      "executionTimeMillisEstimate": 5384
+    },
+    {
+      "$project": {
+        "_id": true,
+        "number_of_movies": true,
+        "average_rating": {
+          "$round": [
+            "$average_rating",
+            {
+              "$const": 2
+            }
+          ]
+        },
+        "average_revenue": {
+          "$round": [
+            "$average_revenue",
+            {
+              "$const": 2
+            }
+          ]
+        },
+        "average_budget": {
+          "$round": [
+            "$average_budget",
+            {
+              "$const": 2
+            }
+          ]
+        }
+      },
+      "nReturned": 19,
+      "executionTimeMillisEstimate": 5384
+    },
+    {
+      "$sort": {
+        "sortKey": {
+          "average_rating": -1,
+          "number_of_movies": -1
+        },
+        "limit": 10
+      },
+      "totalDataSizeSortedBytesEstimate": 4530,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "nReturned": 10,
+      "executionTimeMillisEstimate": 5384
+    }
+  ],
+  "serverInfo": {
+    "host": "ac-w0akn8z-lb.bzu4vh1.mongodb.net",
+    "port": 27017,
+    "version": "7.3.2",
+    "gitVersion": "cb58a79ea634ff332b6b6f3c145571db23a09c95"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted"
+  },
+  "command": {
+    "aggregate": "movie",
+    "pipeline": [
+      {
+        "$addFields": {
+          "genres": {
+            "$cond": {
+              "if": {
+                "$eq": [
+                  {
+                    "$type": "$genres"
+                  },
+                  "string"
+                ]
+              },
+              "then": {
+                "$split": [
+                  "$genres",
+                  ", "
+                ]
+              },
+              "else": []
+            }
+          }
+        }
+      },
+      {
+        "$unwind": "$genres"
+      },
+      {
+        "$match": {
+          "genres": {
+            "$ne": ""
+          }
+        }
+      },
+      {
+        "$group": {
+          "_id": "$genres",
+          "number_of_movies": {
+            "$sum": 1
+          },
+          "average_rating": {
+            "$avg": "$vote_average"
+          },
+          "average_revenue": {
+            "$avg": "$revenue"
+          },
+          "average_budget": {
+            "$avg": "$budget"
+          }
+        }
+      },
+      {
+        "$project": {
+          "_id": 1,
+          "number_of_movies": 1,
+          "average_rating": {
+            "$round": [
+              "$average_rating",
+              2
+            ]
+          },
+          "average_revenue": {
+            "$round": [
+              "$average_revenue",
+              2
+            ]
+          },
+          "average_budget": {
+            "$round": [
+              "$average_budget",
+              2
+            ]
+          }
+        }
+      },
+      {
+        "$sort": {
+          "average_rating": -1,
+          "number_of_movies": -1
+        }
+      },
+      {
+        "$limit": 10
+      }
+    ],
+    "cursor": {},
+    "$db": "movies"
+  },
+  "ok": 1,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1718877561,
+        "i": 44
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "wM3KOy6qbC7bLec6F979O9SUuow=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7320991074242003000
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1718877561,
+      "i": 44
+    }
+  }
+}

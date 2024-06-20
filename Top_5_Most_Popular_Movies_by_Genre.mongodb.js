@@ -18,4 +18,4 @@ db.getCollection('movie').aggregate([
     { $sort: { popularity: -1 } },
     { $group: { _id: "$genres", top_movies: { $push: { title: "$title", popularity: "$popularity" } } } },
     { $project: { _id: 1, top_movies: { $slice: ["$top_movies", 5] } } }
-  ])
+  ]).explain("executionStats");

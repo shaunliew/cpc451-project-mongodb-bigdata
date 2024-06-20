@@ -1,0 +1,502 @@
+[
+  {
+    "_id": "Romance",
+    "top_movies": [
+      {
+        "title": "Elemental",
+        "popularity": 1008.942
+      },
+      {
+        "title": "After Everything",
+        "popularity": 474.472
+      },
+      {
+        "title": "My Fault",
+        "popularity": 361.025
+      },
+      {
+        "title": "The Little Mermaid",
+        "popularity": 353.543
+      },
+      {
+        "title": "No Hard Feelings",
+        "popularity": 298.801
+      }
+    ]
+  },
+  {
+    "_id": "Science Fiction",
+    "top_movies": [
+      {
+        "title": "Blue Beetle",
+        "popularity": 2994.357
+      },
+      {
+        "title": "Meg 2: The Trench",
+        "popularity": 1567.273
+      },
+      {
+        "title": "No One Will Save You",
+        "popularity": 961.212
+      },
+      {
+        "title": "Mondocane",
+        "popularity": 640.979
+      },
+      {
+        "title": "Transformers: Rise of the Beasts",
+        "popularity": 616.74
+      }
+    ]
+  },
+  {
+    "_id": "Horror",
+    "top_movies": [
+      {
+        "title": "The Nun II",
+        "popularity": 1692.778
+      },
+      {
+        "title": "Meg 2: The Trench",
+        "popularity": 1567.273
+      },
+      {
+        "title": "Talk to Me",
+        "popularity": 1458.514
+      },
+      {
+        "title": "No One Will Save You",
+        "popularity": 961.212
+      },
+      {
+        "title": "Saw X",
+        "popularity": 949.967
+      }
+    ]
+  },
+  {
+    "_id": "",
+    "top_movies": [
+      {
+        "title": "While My Boss Was Away On A Business Trip, I Fucked The Shit Out Of The Boss's Wife For 3 Whole Days. Tsukasa Aoi",
+        "popularity": 751.806
+      },
+      {
+        "title": "Prison High Pressure",
+        "popularity": 297.563
+      },
+      {
+        "title": "Rick and Morty: The Great Yokai Battle of Akihabara",
+        "popularity": 260.49
+      },
+      {
+        "title": "J & L - Two Pairs of Huge Tits Take Real Creampies Anri Okita Hitomi",
+        "popularity": 242.396
+      },
+      {
+        "title": "S&M Debut National Idol Fully Bound And Forcefully Violated Yua Mikami",
+        "popularity": 212.477
+      }
+    ]
+  },
+  {
+    "_id": "War",
+    "top_movies": [
+      {
+        "title": "Bunker",
+        "popularity": 339.829
+      },
+      {
+        "title": "Red Dawn",
+        "popularity": 300.738
+      },
+      {
+        "title": "Creation of the Gods I: Kingdom of Storms",
+        "popularity": 254.998
+      },
+      {
+        "title": "Warhorse One",
+        "popularity": 230.21
+      },
+      {
+        "title": "Guy Ritchie's The Covenant",
+        "popularity": 188.559
+      }
+    ]
+  },
+  {
+    "_id": "History",
+    "top_movies": [
+      {
+        "title": "Oppenheimer",
+        "popularity": 463.384
+      },
+      {
+        "title": "Viking: Bloodlust",
+        "popularity": 324.115
+      },
+      {
+        "title": "A Million Miles Away",
+        "popularity": 311.77
+      },
+      {
+        "title": "Jeanne du Barry",
+        "popularity": 179.543
+      },
+      {
+        "title": "3-D Sex and Zen: Extreme Ecstasy",
+        "popularity": 173.382
+      }
+    ]
+  },
+  {
+    "_id": "Documentary",
+    "top_movies": [
+      {
+        "title": "Self-Shot, This Is Goddess Arina's Ultimate Rare Fucking Copulation Shot - Arina Hashimoto",
+        "popularity": 244.162
+      },
+      {
+        "title": "S1 15th Anniversary Special. A Huge Collaboration. Part 3. An Extravagant Lineup Of S1 Actresses.",
+        "popularity": 156.019
+      },
+      {
+        "title": "Yua Mikami 10 Changes Extreme Masturbation Support",
+        "popularity": 123.843
+      },
+      {
+        "title": "Ice Cold: Murder, Coffee and Jessica Wongso",
+        "popularity": 111.252
+      },
+      {
+        "title": "(Maximum Immersion! Complete POV Binaural Recording) It Would Be The End If My GF Found Out About Me And Her BFF Who Keeps Seductively Whispering To Me Begging For Creampies Mayuki Ito",
+        "popularity": 110.668
+      }
+    ]
+  },
+  {
+    "_id": "Crime",
+    "top_movies": [
+      {
+        "title": "Retribution",
+        "popularity": 1547.22
+      },
+      {
+        "title": "Fast X",
+        "popularity": 1175.267
+      },
+      {
+        "title": "Saw X",
+        "popularity": 949.967
+      },
+      {
+        "title": "Mondocane",
+        "popularity": 640.979
+      },
+      {
+        "title": "John Wick: Chapter 4",
+        "popularity": 482.538
+      }
+    ]
+  },
+  {
+    "_id": "Action",
+    "top_movies": [
+      {
+        "title": "Blue Beetle",
+        "popularity": 2994.357
+      },
+      {
+        "title": "Gran Turismo",
+        "popularity": 2680.593
+      },
+      {
+        "title": "Meg 2: The Trench",
+        "popularity": 1567.273
+      },
+      {
+        "title": "Retribution",
+        "popularity": 1547.22
+      },
+      {
+        "title": "Fast X",
+        "popularity": 1175.267
+      }
+    ]
+  },
+  {
+    "_id": "Adventure",
+    "top_movies": [
+      {
+        "title": "Blue Beetle",
+        "popularity": 2994.357
+      },
+      {
+        "title": "Gran Turismo",
+        "popularity": 2680.593
+      },
+      {
+        "title": "Barbie",
+        "popularity": 1069.34
+      },
+      {
+        "title": "Carl's Date",
+        "popularity": 819.429
+      },
+      {
+        "title": "Transformers: Rise of the Beasts",
+        "popularity": 616.74
+      }
+    ]
+  },
+  {
+    "_id": "TV Movie",
+    "top_movies": [
+      {
+        "title": "Nightmare Neighborhood Moms",
+        "popularity": 83.428
+      },
+      {
+        "title": "The Venture Bros.: Radiant Is the Blood of the Baboon Heart",
+        "popularity": 75.537
+      },
+      {
+        "title": "Teen Wolf: The Movie",
+        "popularity": 50.705
+      },
+      {
+        "title": "Miraculous World: New York, United HeroeZ",
+        "popularity": 46.147
+      },
+      {
+        "title": "Miraculous World: Shanghai – The Legend of Ladydragon",
+        "popularity": 43.873
+      }
+    ]
+  },
+  {
+    "_id": "Animation",
+    "top_movies": [
+      {
+        "title": "Elemental",
+        "popularity": 1008.942
+      },
+      {
+        "title": "Carl's Date",
+        "popularity": 819.429
+      },
+      {
+        "title": "Spider-Man: Across the Spider-Verse",
+        "popularity": 512.336
+      },
+      {
+        "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+        "popularity": 484.876
+      },
+      {
+        "title": "Scooby-Doo! And Krypto, Too!",
+        "popularity": 411.09
+      }
+    ]
+  },
+  {
+    "_id": "Fantasy",
+    "top_movies": [
+      {
+        "title": "Barbie",
+        "popularity": 1069.34
+      },
+      {
+        "title": "Elemental",
+        "popularity": 1008.942
+      },
+      {
+        "title": "Scooby-Doo! And Krypto, Too!",
+        "popularity": 411.09
+      },
+      {
+        "title": "The Super Mario Bros. Movie",
+        "popularity": 410.411
+      },
+      {
+        "title": "The Little Mermaid",
+        "popularity": 353.543
+      }
+    ]
+  },
+  {
+    "_id": "Family",
+    "top_movies": [
+      {
+        "title": "Elemental",
+        "popularity": 1008.942
+      },
+      {
+        "title": "Carl's Date",
+        "popularity": 819.429
+      },
+      {
+        "title": "Spy Kids: Armageddon",
+        "popularity": 613.403
+      },
+      {
+        "title": "Scooby-Doo! And Krypto, Too!",
+        "popularity": 411.09
+      },
+      {
+        "title": "The Super Mario Bros. Movie",
+        "popularity": 410.411
+      }
+    ]
+  },
+  {
+    "_id": "Drama",
+    "top_movies": [
+      {
+        "title": "Gran Turismo",
+        "popularity": 2680.593
+      },
+      {
+        "title": "A Female Boss with Big Tits and Her Cherry Boy Colleague Stay in the Same Room on a Business Trip - She Seduces Him for Fun and Makes Him Cum 10 Times - Yua Mikami",
+        "popularity": 2020.286
+      },
+      {
+        "title": "Sound of Freedom",
+        "popularity": 1111.036
+      },
+      {
+        "title": "Incest Mother Sister W Azumi Kinoshita Okita Anzunashi",
+        "popularity": 803.324
+      },
+      {
+        "title": "Class Reunion Cuckolding - My Beloved Wife And Her Asshole Ex-Boyfriend Reignite Their Old Flame - Yua Mikami",
+        "popularity": 759.744
+      }
+    ]
+  },
+  {
+    "_id": "Music",
+    "top_movies": [
+      {
+        "title": "Miraculous: Ladybug & Cat Noir, The Movie",
+        "popularity": 212.626
+      },
+      {
+        "title": "The Magic Flute",
+        "popularity": 203.633
+      },
+      {
+        "title": "Coco",
+        "popularity": 166.578
+      },
+      {
+        "title": "Flora and Son",
+        "popularity": 62.28
+      },
+      {
+        "title": "Metalocalypse: Army of the Doomstar",
+        "popularity": 61.87
+      }
+    ]
+  },
+  {
+    "_id": "Thriller",
+    "top_movies": [
+      {
+        "title": "The Nun II",
+        "popularity": 1692.778
+      },
+      {
+        "title": "Retribution",
+        "popularity": 1547.22
+      },
+      {
+        "title": "Talk to Me",
+        "popularity": 1458.514
+      },
+      {
+        "title": "Fast X",
+        "popularity": 1175.267
+      },
+      {
+        "title": "Operation Napoleon",
+        "popularity": 982.611
+      }
+    ]
+  },
+  {
+    "_id": "Mystery",
+    "top_movies": [
+      {
+        "title": "The Nun II",
+        "popularity": 1692.778
+      },
+      {
+        "title": "Retribution",
+        "popularity": 1547.22
+      },
+      {
+        "title": "The Black Book",
+        "popularity": 810.288
+      },
+      {
+        "title": "Let Her Kill You",
+        "popularity": 780.608
+      },
+      {
+        "title": "Scooby-Doo! And Krypto, Too!",
+        "popularity": 411.09
+      }
+    ]
+  },
+  {
+    "_id": "Western",
+    "top_movies": [
+      {
+        "title": "The Good, the Bad and the Ugly",
+        "popularity": 81.717
+      },
+      {
+        "title": "Rango",
+        "popularity": 69.598
+      },
+      {
+        "title": "Django Unchained",
+        "popularity": 54.224
+      },
+      {
+        "title": "Once Upon a Time in the West",
+        "popularity": 48.342
+      },
+      {
+        "title": "The Ballad of Buster Scruggs",
+        "popularity": 48.29
+      }
+    ]
+  },
+  {
+    "_id": "Comedy",
+    "top_movies": [
+      {
+        "title": "Barbie",
+        "popularity": 1069.34
+      },
+      {
+        "title": "Elemental",
+        "popularity": 1008.942
+      },
+      {
+        "title": "Spy Kids: Armageddon",
+        "popularity": 613.403
+      },
+      {
+        "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+        "popularity": 484.876
+      },
+      {
+        "title": "Strays",
+        "popularity": 419.527
+      }
+    ]
+  }
+]

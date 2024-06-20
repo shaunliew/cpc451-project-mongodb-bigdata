@@ -60,4 +60,4 @@ db.getCollection('movie').aggregate([
       top_genres: { $slice: ["$top_genres", 5] }
     }
   }
-])
+]).explain("executionStats");

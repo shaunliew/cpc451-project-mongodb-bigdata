@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "Adventure",
+    "number_of_movies": 22498,
+    "average_rating": 3.91,
+    "average_revenue": 13154174.93,
+    "average_budget": 4479892.73
+  },
+  {
+    "_id": "TV Movie",
+    "number_of_movies": 22981,
+    "average_rating": 3.75,
+    "average_revenue": 10902.92,
+    "average_budget": 52512.32
+  },
+  {
+    "_id": "War",
+    "number_of_movies": 10227,
+    "average_rating": 3.68,
+    "average_revenue": 2752766.52,
+    "average_budget": 1205025.44
+  },
+  {
+    "_id": "Thriller",
+    "number_of_movies": 44352,
+    "average_rating": 3.66,
+    "average_revenue": 3607020.04,
+    "average_budget": 1619902.47
+  },
+  {
+    "_id": "Crime",
+    "number_of_movies": 32209,
+    "average_rating": 3.65,
+    "average_revenue": 2628051,
+    "average_budget": 1196181.36
+  },
+  {
+    "_id": "Action",
+    "number_of_movies": 42747,
+    "average_rating": 3.63,
+    "average_revenue": 7038572.45,
+    "average_budget": 2733807.85
+  },
+  {
+    "_id": "Family",
+    "number_of_movies": 27010,
+    "average_rating": 3.61,
+    "average_revenue": 5045387.52,
+    "average_budget": 1776807.17
+  },
+  {
+    "_id": "Mystery",
+    "number_of_movies": 18791,
+    "average_rating": 3.59,
+    "average_revenue": 2681081.86,
+    "average_budget": 1087919.65
+  },
+  {
+    "_id": "Romance",
+    "number_of_movies": 51494,
+    "average_rating": 3.54,
+    "average_revenue": 1952434.4,
+    "average_budget": 695063.7
+  },
+  {
+    "_id": "History",
+    "number_of_movies": 16054,
+    "average_rating": 3.44,
+    "average_revenue": 1815644.8,
+    "average_budget": 1028260.85
+  }
+]

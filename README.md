@@ -6,6 +6,8 @@
 
 ## Import Data
 
+Download the [Full TMDB Movies Dataset 2024 CSV File](https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies) into your local machine.
+
 make sure you download `MongoDB for VS Code` extension
 
 connect your cluster using connection string.

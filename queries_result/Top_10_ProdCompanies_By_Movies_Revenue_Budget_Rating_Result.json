@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "Warner Bros. Pictures",
+    "total_movies": 3249,
+    "average_revenue": 25112487.932902433,
+    "average_budget": 10042607.760233918,
+    "average_rating": 4.912552477685441
+  },
+  {
+    "_id": "Columbia Pictures",
+    "total_movies": 2938,
+    "average_revenue": 20406457.09223962,
+    "average_budget": 7308771.176991151,
+    "average_rating": 3.7801742682096666
+  },
+  {
+    "_id": "Paramount",
+    "total_movies": 2658,
+    "average_revenue": 23929492.924755454,
+    "average_budget": 8215687.890519188,
+    "average_rating": 4.3207505643340856
+  },
+  {
+    "_id": "Universal Pictures",
+    "total_movies": 2644,
+    "average_revenue": 29414597.545385778,
+    "average_budget": 9370986.212178517,
+    "average_rating": 3.994010590015129
+  },
+  {
+    "_id": "20th Century Fox",
+    "total_movies": 1709,
+    "average_revenue": 37476847.20070217,
+    "average_budget": 11134494.25570509,
+    "average_rating": 5.44610883557636
+  },
+  {
+    "_id": "United Artists",
+    "total_movies": 644,
+    "average_revenue": 11016944.80279503,
+    "average_budget": 3218254.5108695654,
+    "average_rating": 5.890327639751553
+  },
+  {
+    "_id": "Walt Disney Pictures",
+    "total_movies": 550,
+    "average_revenue": 98057580.60909091,
+    "average_budget": 33242741.701818183,
+    "average_rating": 5.235581818181818
+  },
+  {
+    "_id": "StudioCanal",
+    "total_movies": 518,
+    "average_revenue": 15618867.362934362,
+    "average_budget": 7586580.243243244,
+    "average_rating": 5.49607722007722
+  },
+  {
+    "_id": "Lionsgate",
+    "total_movies": 465,
+    "average_revenue": 30197537.62580645,
+    "average_budget": 11603277.73763441,
+    "average_rating": 4.747156989247312
+  },
+  {
+    "_id": "TF1 Films Production",
+    "total_movies": 434,
+    "average_revenue": 10055412.642857144,
+    "average_budget": 5614642.370967742,
+    "average_rating": 5.436914746543779
+  }
+]

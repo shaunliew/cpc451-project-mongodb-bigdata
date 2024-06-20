@@ -1,0 +1,295 @@
+{
+  "explainVersion": "1",
+  "stages": [
+    {
+      "$cursor": {
+        "queryPlanner": {
+          "namespace": "movies.movie",
+          "indexFilterSet": false,
+          "parsedQuery": {
+            "popularity": {
+              "$gte": 10
+            }
+          },
+          "queryHash": "28014384",
+          "planCacheKey": "6047DB38",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "genres": 1,
+              "popularity": 1,
+              "title": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "popularity": {
+                  "$gte": 10
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 15912,
+          "executionTimeMillis": 1157,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1053633,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 15912,
+            "executionTimeMillisEstimate": 800,
+            "works": 1053634,
+            "advanced": 15912,
+            "needTime": 1037721,
+            "needYield": 0,
+            "saveState": 1062,
+            "restoreState": 1062,
+            "isEOF": 1,
+            "transformBy": {
+              "genres": 1,
+              "popularity": 1,
+              "title": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "popularity": {
+                  "$gte": 10
+                }
+              },
+              "nReturned": 15912,
+              "executionTimeMillisEstimate": 774,
+              "works": 1053634,
+              "advanced": 15912,
+              "needTime": 1037721,
+              "needYield": 0,
+              "saveState": 1062,
+              "restoreState": 1062,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1053633
+            }
+          },
+          "operationMetrics": {
+            "docBytesRead": 848650479,
+            "docUnitsRead": 1053633,
+            "keysSorted": 15912,
+            "cpuNanos": 1157661990
+          }
+        }
+      },
+      "nReturned": 15912,
+      "executionTimeMillisEstimate": 1042
+    },
+    {
+      "$addFields": {
+        "genres": {
+          "$cond": [
+            {
+              "$eq": [
+                {
+                  "$type": [
+                    "$genres"
+                  ]
+                },
+                {
+                  "$const": "string"
+                }
+              ]
+            },
+            {
+              "$split": [
+                "$genres",
+                {
+                  "$const": ", "
+                }
+              ]
+            },
+            {
+              "$const": []
+            }
+          ]
+        }
+      },
+      "nReturned": 15912,
+      "executionTimeMillisEstimate": 1066
+    },
+    {
+      "$sort": {
+        "sortKey": {
+          "popularity": -1
+        }
+      },
+      "totalDataSizeSortedBytesEstimate": 6149674,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "nReturned": 15912,
+      "executionTimeMillisEstimate": 1077
+    },
+    {
+      "$unwind": {
+        "path": "$genres"
+      },
+      "nReturned": 39453,
+      "executionTimeMillisEstimate": 1095
+    },
+    {
+      "$group": {
+        "_id": "$genres",
+        "top_movies": {
+          "$push": {
+            "title": "$title",
+            "popularity": "$popularity"
+          }
+        }
+      },
+      "maxAccumulatorMemoryUsageBytes": {
+        "top_movies": 11449677
+      },
+      "totalOutputDataSizeBytes": 11453976,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "numBytesSpilledEstimate": 0,
+      "spilledRecords": 0,
+      "nReturned": 20,
+      "executionTimeMillisEstimate": 1157
+    },
+    {
+      "$project": {
+        "_id": true,
+        "top_movies": {
+          "$slice": [
+            "$top_movies",
+            {
+              "$const": 5
+            }
+          ]
+        }
+      },
+      "nReturned": 20,
+      "executionTimeMillisEstimate": 1157
+    }
+  ],
+  "serverInfo": {
+    "host": "ac-w0akn8z-lb.bzu4vh1.mongodb.net",
+    "port": 27017,
+    "version": "7.3.2",
+    "gitVersion": "cb58a79ea634ff332b6b6f3c145571db23a09c95"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted"
+  },
+  "command": {
+    "aggregate": "movie",
+    "pipeline": [
+      {
+        "$addFields": {
+          "genres": {
+            "$cond": {
+              "if": {
+                "$eq": [
+                  {
+                    "$type": "$genres"
+                  },
+                  "string"
+                ]
+              },
+              "then": {
+                "$split": [
+                  "$genres",
+                  ", "
+                ]
+              },
+              "else": []
+            }
+          }
+        }
+      },
+      {
+        "$unwind": "$genres"
+      },
+      {
+        "$match": {
+          "popularity": {
+            "$gte": 10
+          }
+        }
+      },
+      {
+        "$sort": {
+          "popularity": -1
+        }
+      },
+      {
+        "$group": {
+          "_id": "$genres",
+          "top_movies": {
+            "$push": {
+              "title": "$title",
+              "popularity": "$popularity"
+            }
+          }
+        }
+      },
+      {
+        "$project": {
+          "_id": 1,
+          "top_movies": {
+            "$slice": [
+              "$top_movies",
+              5
+            ]
+          }
+        }
+      }
+    ],
+    "cursor": {},
+    "$db": "movies"
+  },
+  "ok": 1,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1718877321,
+        "i": 711
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "v8JzOrfuzjtzWD/MD1qE/n/p7Wc=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7320991074242003000
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1718877321,
+      "i": 711
+    }
+  }
+}

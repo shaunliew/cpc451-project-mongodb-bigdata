@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "English",
+    "top_genres": [
+      {
+        "genre": "Drama",
+        "number_of_movies": 82349,
+        "average_rating": 3.14
+      },
+      {
+        "genre": "Documentary",
+        "number_of_movies": 81257,
+        "average_rating": 2.3
+      },
+      {
+        "genre": "Comedy",
+        "number_of_movies": 62638,
+        "average_rating": 3.27
+      },
+      {
+        "genre": "Horror",
+        "number_of_movies": 31419,
+        "average_rating": 2.88
+      },
+      {
+        "genre": "Animation",
+        "number_of_movies": 29932,
+        "average_rating": 2.57
+      }
+    ]
+  },
+  {
+    "_id": "Non-English",
+    "top_genres": [
+      {
+        "genre": "Drama",
+        "number_of_movies": 134835,
+        "average_rating": 2.91
+      },
+      {
+        "genre": "Documentary",
+        "number_of_movies": 75474,
+        "average_rating": 1.85
+      },
+      {
+        "genre": "Comedy",
+        "number_of_movies": 71116,
+        "average_rating": 3.34
+      },
+      {
+        "genre": "Romance",
+        "number_of_movies": 29872,
+        "average_rating": 3.38
+      },
+      {
+        "genre": "Animation",
+        "number_of_movies": 24515,
+        "average_rating": 2.4
+      }
+    ]
+  }
+]
